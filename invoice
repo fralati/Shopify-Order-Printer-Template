@@ -1,67 +1,83 @@
+<style>
+  /* Stili di base per compatibilità con generatori PDF esterni */
+  .columns { display: flex; justify-content: space-between; width: 100%; align-items: flex-start; }
+  .columns > div { width: 48%; }
+  .address { margin-bottom: 1.5em; }
+  .table-tabular { width: 100%; border-collapse: collapse; }
+  .table-tabular th, .table-tabular td { padding: 5px 0; }
+  .subduedText { color: #666; }
+</style>
+
 {% comment %} --- MOTORE DI TRADUZIONE INTEGRALE E B2B (IT, FR, DE, EN) --- {% endcomment %}
 {% assign lang = order.customer_locale | slice: 0, 2 | downcase %}
 {% case lang %}
   {% when 'it' %}
     {% assign t_invoice = "Fattura" %}{% assign t_order = "Ordine" %}{% assign t_from = "Da" %}{% assign t_bill_to = "Fatturare a" %}{% assign t_ship_to = "Spedire a" %}
-    {% assign t_qty = "Qtà" %}{% assign t_item = "Articolo" %}{% assign t_list = "Listino" %}{% assign t_disc_perc = "Sconto %" %}{% assign t_unit_net = "Netto Un." %}{% assign t_total_net = "Totale Netto" %}
+    {% assign t_qty = "Qtà" %}{% assign t_item = "Articolo" %}{% assign t_list = "Listino" %}{% assign t_disc_perc = "Sconto %" %}{% assign t_unit_net = "Prezzo Un." %}{% assign t_total_net = "Totale Riga" %}
     {% assign t_vat_incl = "Tutti gli importi includono l'IVA" %}{% assign t_vat_excl = "Tutti gli importi escludono l'IVA" %}
     {% assign t_vat_export = "Tutti gli importi escludono l'IVA (Regime Export)" %}
     {% assign t_pmt_details = "Dettagli Pagamento" %}{% assign t_total_msrp = "Valore totale di listino" %}
-    {% assign t_disc_code = "Codici e Community" %}{% assign t_no_code = "Unisciti alla Community PRO" %}
+    {% assign t_disc_code = "Codici e Community" %}{% assign t_no_code = "Nessun codice" %}
     {% assign t_tax_label = "IVA" %}{% assign t_shop_vat = "IVA" %}
-    {% assign t_amt_saved = "Risparmio totale" %}{% assign t_overall_disc = "Sconto effettivo (Inclusi Omaggi)" %}{% assign t_subtotal_net = "Subtotale netto prodotti" %}{% assign t_shipping = "Spedizione" %}
+    {% assign t_amt_saved = "Risparmio totale" %}{% assign t_overall_disc = "Sconto effettivo (Inclusi Omaggi)" %}{% assign t_subtotal = "Subtotale prodotti" %}{% assign t_shipping = "Spedizione" %}
     {% assign t_total_order = "Valore totale ordine" %}{% assign t_outstanding = "DA PAGARE (Residuo)" %}{% assign t_paid = "PAGATO" %}{% assign t_pmt_status = "Stato Pagamento" %}{% assign t_bank_details = "Dati Bancari" %}{% assign t_acc_holder = "Titolare del conto" %}
     {% assign t_bank = "Banca" %}{% assign t_pmt_instr = "Istruzioni per il pagamento:" %}{% assign t_pmt_memo = "Per favore usa l'Ordine come riferimento." %}
     {% assign t_footer = "Se hai domande, invia un'email a" %}{% assign t_free_gift = "OMAGGIO (Valore doganale)" %}
     {% assign t_payment_terms = "Termini di pagamento:" %}{% assign t_msrp_ref = "Prezzo consigliato (MSRP):" %}
     {% assign t_extra_disc = "Sconto Extra" %}
+    {% assign t_pmt_method = "Metodo di Pagamento" %}
   {% when 'fr' %}
     {% assign t_invoice = "Facture" %}{% assign t_order = "Commande" %}{% assign t_from = "De" %}{% assign t_bill_to = "Facturer à" %}{% assign t_ship_to = "Expédier à" %}
-    {% assign t_qty = "Qté" %}{% assign t_item = "Article" %}{% assign t_list = "Catalogue" %}{% assign t_disc_perc = "Remise %" %}{% assign t_unit_net = "Net Unit." %}{% assign t_total_net = "Total Net" %}
+    {% assign t_qty = "Qté" %}{% assign t_item = "Article" %}{% assign t_list = "Catalogue" %}{% assign t_disc_perc = "Remise %" %}{% assign t_unit_net = "Prix Unit." %}{% assign t_total_net = "Total Ligne" %}
     {% assign t_vat_incl = "Tous les montants incluent la TVA" %}{% assign t_vat_excl = "Tous les montants excluent la TVA" %}
     {% assign t_vat_export = "Tous les montants excluent la TVA (Régime Export)" %}
     {% assign t_pmt_details = "Détails du Paiement" %}{% assign t_total_msrp = "Valeur totale au catalogue" %}
-    {% assign t_disc_code = "Codes & Communauté" %}{% assign t_no_code = "Rejoignez la Communauté PRO" %}
+    {% assign t_disc_code = "Codes & Communauté" %}{% assign t_no_code = "Aucun code" %}
     {% assign t_tax_label = "TVA" %}{% assign t_shop_vat = "TVA" %}
-    {% assign t_amt_saved = "Économie totale" %}{% assign t_overall_disc = "Remise effective (Cadeaux inclus)" %}{% assign t_subtotal_net = "Sous-total net produits" %}{% assign t_shipping = "Livraison" %}
+    {% assign t_amt_saved = "Économie totale" %}{% assign t_overall_disc = "Remise effective (Cadeaux inclus)" %}{% assign t_subtotal = "Sous-total produits" %}{% assign t_shipping = "Livraison" %}
     {% assign t_total_order = "Valeur totale commande" %}{% assign t_outstanding = "RESTE À PAYER" %}{% assign t_paid = "PAYÉ" %}{% assign t_pmt_status = "Statut du paiement" %}{% assign t_bank_details = "Coordonnées Bancaires" %}{% assign t_acc_holder = "Titulaire du compte" %}
     {% assign t_bank = "Banque" %}{% assign t_pmt_instr = "Instructions de paiement :" %}{% assign t_pmt_memo = "Veuillez utiliser la Commande comme référence." %}
     {% assign t_footer = "Si vous avez des questions, veuillez envoyer un e-mail à" %}{% assign t_free_gift = "OFFERT (Valeur en douane)" %}
     {% assign t_payment_terms = "Modalités de paiement :" %}{% assign t_msrp_ref = "Prix de vente conseillé (MSRP) :" %}
     {% assign t_extra_disc = "Remise Supplémentaire" %}
+    {% assign t_pmt_method = "Moyen de Paiement" %}
   {% when 'de' %}
     {% assign t_invoice = "Rechnung" %}{% assign t_order = "Bestellung" %}{% assign t_from = "Von" %}{% assign t_bill_to = "Rechnungsadresse" %}{% assign t_ship_to = "Lieferadresse" %}
-    {% assign t_qty = "Menge" %}{% assign t_item = "Artikel" %}{% assign t_list = "Listenpreis" %}{% assign t_disc_perc = "Rabatt %" %}{% assign t_unit_net = "Netto Einh." %}{% assign t_total_net = "Netto Gesamt" %}
+    {% assign t_qty = "Menge" %}{% assign t_item = "Artikel" %}{% assign t_list = "Listenpreis" %}{% assign t_disc_perc = "Rabatt %" %}{% assign t_unit_net = "Einh. Preis" %}{% assign t_total_net = "Zeilensumme" %}
     {% assign t_vat_incl = "Alle Beträge enthalten die MwSt." %}{% assign t_vat_excl = "Alle Beträge verstehen sich exkl. MwSt." %}
     {% assign t_vat_export = "Alle Beträge verstehen sich exkl. MwSt. (Export)" %}
     {% assign t_pmt_details = "Zahlungsdetails" %}{% assign t_total_msrp = "Gesamtlistenpreis" %}
-    {% assign t_disc_code = "Codes & Community" %}{% assign t_no_code = "Werde Teil der PRO-Community" %}
+    {% assign t_disc_code = "Codes & Community" %}{% assign t_no_code = "Kein Code" %}
     {% assign t_tax_label = "MwSt" %}{% assign t_shop_vat = "MwSt" %}
-    {% assign t_amt_saved = "Gesamte Ersparnis" %}{% assign t_overall_disc = "Effektiver Rabatt (inkl. Geschenke)" %}{% assign t_subtotal_net = "Zwischensumme Netto Produkte" %}{% assign t_shipping = "Versand" %}
+    {% assign t_amt_saved = "Gesamte Ersparnis" %}{% assign t_overall_disc = "Effektiver Rabatt (inkl. Geschenke)" %}{% assign t_subtotal = "Zwischensumme Produkte" %}{% assign t_shipping = "Versand" %}
     {% assign t_total_order = "Gesamtbestellwert" %}{% assign t_outstanding = "NOCH ZU ZAHLEN" %}{% assign t_paid = "BEZAHLT" %}{% assign t_pmt_status = "Zahlungsstatus" %}{% assign t_bank_details = "Bankverbindung" %}{% assign t_acc_holder = "Kontoinhaber" %}
     {% assign t_bank = "Bank" %}{% assign t_pmt_instr = "Zahlungsanweisungen:" %}{% assign t_pmt_memo = "Bitte verwenden Sie die Bestellung als Referenz." %}
     {% assign t_footer = "Wenn Sie Fragen haben, senden Sie bitte eine E-Mail an" %}{% assign t_free_gift = "GRATIS (Zollwert)" %}
     {% assign t_payment_terms = "Zahlungsbedingungen:" %}{% assign t_msrp_ref = "Unverbindliche Preisempfehlung (UVP):" %}
     {% assign t_extra_disc = "Zusätzlicher Rabatt" %}
+    {% assign t_pmt_method = "Zahlungsmethode" %}
   {% else %}
     {% assign t_invoice = "Invoice" %}{% assign t_order = "Order" %}{% assign t_from = "From" %}{% assign t_bill_to = "Bill to" %}{% assign t_ship_to = "Ship to" %}
-    {% assign t_qty = "Qty" %}{% assign t_item = "Item" %}{% assign t_list = "List Price" %}{% assign t_disc_perc = "Disc. %" %}{% assign t_unit_net = "Unit Net" %}{% assign t_total_net = "Total Net" %}
+    {% assign t_qty = "Qty" %}{% assign t_item = "Item" %}{% assign t_list = "List Price" %}{% assign t_disc_perc = "Disc. %" %}{% assign t_unit_net = "Unit Price" %}{% assign t_total_net = "Line Total" %}
     {% assign t_vat_incl = "All amounts include VAT" %}{% assign t_vat_excl = "All amounts exclude VAT" %}
     {% assign t_vat_export = "All amounts exclude VAT (Export)" %}
     {% assign t_pmt_details = "Payments Details" %}{% assign t_total_msrp = "Total List Price" %}
-    {% assign t_disc_code = "Codes & Community" %}{% assign t_no_code = "Join our PRO Community" %}
+    {% assign t_disc_code = "Codes & Community" %}{% assign t_no_code = "No Code" %}
     {% assign t_tax_label = "VAT" %}{% assign t_shop_vat = "VAT" %}
-    {% assign t_amt_saved = "Total Amount Saved" %}{% assign t_overall_disc = "Effective Discount (Inc. Gifts)" %}{% assign t_subtotal_net = "Subtotal Net Products" %}{% assign t_shipping = "Shipping" %}
+    {% assign t_amt_saved = "Total Amount Saved" %}{% assign t_overall_disc = "Effective Discount (Inc. Gifts)" %}{% assign t_subtotal = "Products Subtotal" %}{% assign t_shipping = "Shipping" %}
     {% assign t_total_order = "Total Order Value" %}{% assign t_outstanding = "OUTSTANDING AMOUNT" %}{% assign t_paid = "PAID" %}{% assign t_pmt_status = "Payment Status" %}{% assign t_bank_details = "Banking Details" %}{% assign t_acc_holder = "Account Holder" %}
     {% assign t_bank = "Bank" %}{% assign t_pmt_instr = "Payment Instructions:" %}{% assign t_pmt_memo = "Please use Order as reference." %}
     {% assign t_footer = "If you have any questions, please send an email to" %}{% assign t_free_gift = "FREE GIFT (Customs value)" %}
     {% assign t_payment_terms = "Payment terms:" %}{% assign t_msrp_ref = "Recommended Retail Price (MSRP):" %}
     {% assign t_extra_disc = "Extra Discount" %}
+    {% assign t_pmt_method = "Payment Method" %}
 {% endcase %}
 
 <div>
   <div class="columns">
-    <h1>{{ t_invoice }}</h1>
+    <div>
+      <h1>{{ t_invoice }}</h1>
+    </div>
     <div>
       <p style="text-align: right; margin: 0;">
         {{ t_order }} {{ order.order_name }}<br />
@@ -85,7 +101,6 @@
   {% if order.billing_address %}
   <div class="address">
     <strong>{{ t_bill_to }}</strong><br/>
-    {% comment %} Mostra l'azienda sia se è B2B nativo, sia se è un D2C che ha compilato il campo {% endcomment %}
     {% if order.company %}
       <strong>{{ order.company.name }}</strong><br/>
     {% elsif order.billing_address.company != blank %}
@@ -133,27 +148,28 @@
     {% assign total_msrp_all = 0 %}
 
     {% for line in order.line_items %}
-      {% comment %} 
-        LOGICA PREZZI B2B vs D2C:
-        Se B2B: listino = catalogo B2B, retail_msrp = mostrato come info sotto il titolo
-        Se D2C: listino = compare_at_price (retail MSRP), non c'è sub-info
-      {% endcomment %}
+      {% comment %} LOGICA PREZZI CON FALLBACK SICURI {% endcomment %}
       {% if order.b2b %}
-        {% assign item_list = line.original_price %}
+        {% assign item_list = line.original_price | default: line.price %}
         {% assign retail_msrp = line.variant.price %}
       {% else %}
-        {% assign item_list = line.variant.compare_at_price | default: line.original_price %}
+        {% assign item_list = line.variant.compare_at_price | default: line.original_price | default: line.price %}
         {% assign retail_msrp = 0 %}
       {% endif %}
       
-      {% comment %} Calcolo netto "manuale" garantito per Order Printer {% endcomment %}
-      {% assign net_line_total = line.original_line_price %}
+      {% comment %} CALCOLO NETTO CON DIFESA SUI DECIMAL {% endcomment %}
+      {% assign net_line_total = line.original_line_price | default: line.line_price %}
       {% for allocation in line.discount_allocations %}
         {% assign net_line_total = net_line_total | minus: allocation.amount %}
       {% endfor %}
-      {% assign unit_net = net_line_total | divided_by: line.quantity %}
+      
+      {% if line.quantity > 0 %}
+        {% assign unit_net = net_line_total | times: 1.0 | divided_by: line.quantity %}
+      {% else %}
+        {% assign unit_net = 0 %}
+      {% endif %}
 
-      {% comment %} Calcolo Sconto % basato sul listino (B2B o D2C) della riga {% endcomment %}
+      {% comment %} CALCOLO SCONTO % {% endcomment %}
       {% if item_list > unit_net %}
         {% assign item_disc_perc = item_list | minus: unit_net | times: 100.0 | divided_by: item_list | round: 1 %}
       {% else %}
@@ -161,9 +177,8 @@
       {% endif %}
 
       {% assign is_free_gift = false %}
-      {% if unit_net == 0 or item_disc_perc >= 99.0 %}{% assign is_free_gift = true %}{% endif %}
+      {% if unit_net <= 0 or item_disc_perc >= 99.0 %}{% assign is_free_gift = true %}{% endif %}
 
-      {% comment %} Accumulatore del valore del listino esposto (usato per i totali in basso) {% endcomment %}
       {% assign line_list_sum = item_list | times: line.quantity %}
       {% assign total_msrp_all = total_msrp_all | plus: line_list_sum %}
 
@@ -186,19 +201,16 @@
   </tbody>
 </table>
 
-{% comment %} LOGICA IVA BLINDATA (Usa order.b2b) {% endcomment %}
+{% comment %} LOGICA IVA BLINDATA {% endcomment %}
 <p class="subduedText" style="text-align: right; margin-top: 0.5em; font-size: 0.85em;">
   {% assign country = order.shipping_address.country_code | default: order.billing_address.country_code %}
-  
   {% if order.b2b %}
-    {% comment %} Ordine B2B Nativo -> Sempre netto (CH/LI o Export) {% endcomment %}
     {% if country == 'CH' or country == 'LI' %}
       <strong>{{ t_vat_excl }}</strong>
     {% else %}
       <strong>{{ t_vat_export }}</strong>
     {% endif %}
   {% else %}
-    {% comment %} Ordine D2C (anche se con nome azienda compilato) -> Lordo per CH/LI, Netto per Export {% endcomment %}
     {% if country == 'CH' or country == 'LI' %}
       {{ t_vat_incl }}
     {% else %}
@@ -212,12 +224,7 @@
 <h2>{{ t_pmt_details }}</h2>
 <table class="table-tabular" style="margin: 0; font-size: 0.9em; width: 100%; border-collapse: collapse;">
   <tbody>
-    {% assign discount_codes_list = "" %}
-    {% for discount_app in order.cart_level_discount_applications %}
-      {% if discount_app.title %}{% assign discount_codes_list = discount_codes_list | append: discount_app.title | append: ", " %}{% endif %}
-    {% endfor %}
-    {% assign discount_codes_list = discount_codes_list | strip | strip_newlines | remove_last: "," %}
-
+    {% assign discount_codes_list = order.cart_level_discount_applications | map: "title" | join: ", " %}
     {% assign total_savings_money = total_msrp_all | minus: order.subtotal_price %}
 
     <tr>
@@ -228,19 +235,17 @@
     <tr>
       <td colspan="5" style="text-align: right; padding: 5px 30px 5px 0;">{{ t_disc_code }}</td>
       <td colspan="2" style="text-align: right; padding: 5px 0;">
-        {% if discount_codes_list != "" %}{{ discount_codes_list }}{% else %}<span style="font-style: italic; color: #888;">{{ t_no_code }}</span>{% endif %}
+        {% if discount_codes_list != blank %}{{ discount_codes_list }}{% else %}<span style="font-style: italic; color: #888;">{{ t_no_code }}</span>{% endif %}
       </td>
     </tr>
 
     {% if total_savings_money > 0 %}
       {% if order.b2b %}
-        {% comment %} B2B: Mostra lo sconto solo se c'è un risparmio extra rispetto al Listino B2B {% endcomment %}
         <tr style="color: #e63946;">
           <td colspan="5" style="text-align: right; padding: 5px 30px 5px 0;">{{ t_extra_disc }}</td>
           <td colspan="2" style="text-align: right; padding: 5px 0;">-{{ total_savings_money | money }}</td>
         </tr>
       {% else %}
-        {% comment %} D2C: Mostra il grande Risparmio Totale e la Percentuale Effettiva {% endcomment %}
         {% assign effective_discount_perc = total_savings_money | times: 100.0 | divided_by: total_msrp_all | round: 1 %}
         <tr style="color: #e63946;">
           <td colspan="5" style="text-align: right; padding: 5px 30px 5px 0;">{{ t_amt_saved }}</td>
@@ -254,7 +259,7 @@
     {% endif %}
 
     <tr>
-      <td colspan="5" style="text-align: right; padding: 5px 30px 5px 0;"><strong>{{ t_subtotal_net }}</strong></td>
+      <td colspan="5" style="text-align: right; padding: 5px 30px 5px 0;"><strong>{{ t_subtotal }}</strong></td>
       <td colspan="2" style="text-align: right; padding: 5px 0;"><strong>{{ order.subtotal_price | money }}</strong></td>
     </tr>
     
@@ -270,18 +275,32 @@
       <td colspan="2" style="text-align: right; padding: 5px 0;">{{ order.shipping_price | money }}</td>
     </tr>
 
+    {% comment %} METODO DI PAGAMENTO CON DOPPIO REPLACE PER TRATTINI E UNDERSCORE {% endcomment %}
+    {% if order.gateway != blank %}
+    <tr>
+      <td colspan="5" style="text-align: right; padding: 5px 30px 5px 0;">{{ t_pmt_method }}</td>
+      <td colspan="2" style="text-align: right; padding: 5px 0;">{{ order.gateway | replace: "-", " " | replace: "_", " " | capitalize }}</td>
+    </tr>
+    {% endif %}
+
     <tr>
       <td colspan="5" style="text-align: right; font-size: 1.1em; padding: 10px 30px 5px 0; border-top: 1px solid #000;"><strong>{{ t_total_order }}</strong></td>
       <td colspan="2" style="text-align: right; font-size: 1.1em; border-top: 1px solid #000; padding: 10px 0 5px 0;"><strong>{{ order.total_price | money }}</strong></td>
     </tr>
 
-    {% if order.financial_status == 'paid' or order.financial_status == 'refunded' %}
-      {% assign outstanding_amt = 0 %}
+    {% comment %} GESTIONE STATO PAGAMENTO BLINDATA E "BLIND" AL FINANCIAL_STATUS {% endcomment %}
+    {% if order.total_outstanding != blank %}
+      {% assign outstanding_amt = order.total_outstanding %}
     {% else %}
-      {% assign outstanding_amt = order.total_outstanding | default: order.total_price %}
+      {% comment %} Fallback per ordini molto vecchi senza la variabile total_outstanding {% endcomment %}
+      {% if order.financial_status == 'paid' or order.financial_status == 'voided' or order.financial_status == 'refunded' %}
+        {% assign outstanding_amt = 0 %}
+      {% else %}
+        {% assign outstanding_amt = order.total_price %}
+      {% endif %}
     {% endif %}
 
-    {% if outstanding_amt == 0 %}
+    {% if outstanding_amt <= 0 %}
       <tr>
         <td colspan="5" style="text-align: right; padding: 5px 30px 5px 0;"><strong>{{ t_pmt_status }}</strong></td>
         <td colspan="2" style="text-align: right; padding: 5px 0; color: #2a9d8f;"><strong>{{ t_paid }}</strong></td>
