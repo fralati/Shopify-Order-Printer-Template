@@ -14,6 +14,7 @@
     {% assign t_bank = "Banca" %}{% assign t_pmt_instr = "Istruzioni per il pagamento:" %}{% assign t_pmt_memo = "Per favore usa l'Ordine come riferimento." %}
     {% assign t_footer = "Se hai domande, invia un'email a" %}{% assign t_free_gift = "OMAGGIO (Valore doganale)" %}
     {% assign t_payment_terms = "Termini di pagamento:" %}{% assign t_msrp_ref = "Prezzo consigliato (MSRP):" %}
+    {% assign t_extra_disc = "Sconto Extra" %}
   {% when 'fr' %}
     {% assign t_invoice = "Facture" %}{% assign t_order = "Commande" %}{% assign t_from = "De" %}{% assign t_bill_to = "Facturer à" %}{% assign t_ship_to = "Expédier à" %}
     {% assign t_qty = "Qté" %}{% assign t_item = "Article" %}{% assign t_list = "Catalogue" %}{% assign t_disc_perc = "Remise %" %}{% assign t_unit_net = "Net Unit." %}{% assign t_total_net = "Total Net" %}
@@ -27,6 +28,7 @@
     {% assign t_bank = "Banque" %}{% assign t_pmt_instr = "Instructions de paiement :" %}{% assign t_pmt_memo = "Veuillez utiliser la Commande comme référence." %}
     {% assign t_footer = "Si vous avez des questions, veuillez envoyer un e-mail à" %}{% assign t_free_gift = "OFFERT (Valeur en douane)" %}
     {% assign t_payment_terms = "Modalités de paiement :" %}{% assign t_msrp_ref = "Prix de vente conseillé (MSRP) :" %}
+    {% assign t_extra_disc = "Remise Supplémentaire" %}
   {% when 'de' %}
     {% assign t_invoice = "Rechnung" %}{% assign t_order = "Bestellung" %}{% assign t_from = "Von" %}{% assign t_bill_to = "Rechnungsadresse" %}{% assign t_ship_to = "Lieferadresse" %}
     {% assign t_qty = "Menge" %}{% assign t_item = "Artikel" %}{% assign t_list = "Listenpreis" %}{% assign t_disc_perc = "Rabatt %" %}{% assign t_unit_net = "Netto Einh." %}{% assign t_total_net = "Netto Gesamt" %}
@@ -40,6 +42,7 @@
     {% assign t_bank = "Bank" %}{% assign t_pmt_instr = "Zahlungsanweisungen:" %}{% assign t_pmt_memo = "Bitte verwenden Sie die Bestellung als Referenz." %}
     {% assign t_footer = "Wenn Sie Fragen haben, senden Sie bitte eine E-Mail an" %}{% assign t_free_gift = "GRATIS (Zollwert)" %}
     {% assign t_payment_terms = "Zahlungsbedingungen:" %}{% assign t_msrp_ref = "Unverbindliche Preisempfehlung (UVP):" %}
+    {% assign t_extra_disc = "Zusätzlicher Rabatt" %}
   {% else %}
     {% assign t_invoice = "Invoice" %}{% assign t_order = "Order" %}{% assign t_from = "From" %}{% assign t_bill_to = "Bill to" %}{% assign t_ship_to = "Ship to" %}
     {% assign t_qty = "Qty" %}{% assign t_item = "Item" %}{% assign t_list = "List Price" %}{% assign t_disc_perc = "Disc. %" %}{% assign t_unit_net = "Unit Net" %}{% assign t_total_net = "Total Net" %}
@@ -53,6 +56,7 @@
     {% assign t_bank = "Bank" %}{% assign t_pmt_instr = "Payment Instructions:" %}{% assign t_pmt_memo = "Please use Order as reference." %}
     {% assign t_footer = "If you have any questions, please send an email to" %}{% assign t_free_gift = "FREE GIFT (Customs value)" %}
     {% assign t_payment_terms = "Payment terms:" %}{% assign t_msrp_ref = "Recommended Retail Price (MSRP):" %}
+    {% assign t_extra_disc = "Extra Discount" %}
 {% endcase %}
 
 <div>
@@ -232,7 +236,7 @@
       {% if order.b2b %}
         {% comment %} B2B: Mostra lo sconto solo se c'è un risparmio extra rispetto al Listino B2B {% endcomment %}
         <tr style="color: #e63946;">
-          <td colspan="5" style="text-align: right; padding: 5px 30px 5px 0;">Sconto Extra</td>
+          <td colspan="5" style="text-align: right; padding: 5px 30px 5px 0;">{{ t_extra_disc }}</td>
           <td colspan="2" style="text-align: right; padding: 5px 0;">-{{ total_savings_money | money }}</td>
         </tr>
       {% else %}
