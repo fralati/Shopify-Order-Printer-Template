@@ -9,7 +9,7 @@
     {% assign t_pmt_details = "Dettagli Pagamento" %}{% assign t_total_msrp = "Valore totale di listino" %}
     {% assign t_disc_code = "Codici e Community" %}{% assign t_no_code = "Unisciti alla Community PRO" %}
     {% assign t_tax_label = "IVA" %}{% assign t_shop_vat = "IVA" %}
-    {% assign t_amt_saved = "Risparmio totale" %}{% assign t_b2b_disc = "Sconto B2B Standard" %}{% assign t_overall_disc = "Sconto effettivo (Inclusi Omaggi)" %}{% assign t_subtotal_net = "Subtotale netto prodotti" %}{% assign t_shipping = "Spedizione" %}
+    {% assign t_amt_saved = "Risparmio totale" %}{% assign t_overall_disc = "Sconto effettivo (Inclusi Omaggi)" %}{% assign t_subtotal_net = "Subtotale netto prodotti" %}{% assign t_shipping = "Spedizione" %}
     {% assign t_total_order = "Valore totale ordine" %}{% assign t_outstanding = "DA PAGARE (Residuo)" %}{% assign t_paid = "PAGATO" %}{% assign t_pmt_status = "Stato Pagamento" %}{% assign t_bank_details = "Dati Bancari" %}{% assign t_acc_holder = "Titolare del conto" %}
     {% assign t_bank = "Banca" %}{% assign t_pmt_instr = "Istruzioni per il pagamento:" %}{% assign t_pmt_memo = "Per favore usa l'Ordine come riferimento." %}
     {% assign t_footer = "Se hai domande, invia un'email a" %}{% assign t_free_gift = "OMAGGIO (Valore doganale)" %}
@@ -22,7 +22,7 @@
     {% assign t_pmt_details = "Détails du Paiement" %}{% assign t_total_msrp = "Valeur totale au catalogue" %}
     {% assign t_disc_code = "Codes & Communauté" %}{% assign t_no_code = "Rejoignez la Communauté PRO" %}
     {% assign t_tax_label = "TVA" %}{% assign t_shop_vat = "TVA" %}
-    {% assign t_amt_saved = "Économie totale" %}{% assign t_b2b_disc = "Remise B2B Standard" %}{% assign t_overall_disc = "Remise effective (Cadeaux inclus)" %}{% assign t_subtotal_net = "Sous-total net produits" %}{% assign t_shipping = "Livraison" %}
+    {% assign t_amt_saved = "Économie totale" %}{% assign t_overall_disc = "Remise effective (Cadeaux inclus)" %}{% assign t_subtotal_net = "Sous-total net produits" %}{% assign t_shipping = "Livraison" %}
     {% assign t_total_order = "Valeur totale commande" %}{% assign t_outstanding = "RESTE À PAYER" %}{% assign t_paid = "PAYÉ" %}{% assign t_pmt_status = "Statut du paiement" %}{% assign t_bank_details = "Coordonnées Bancaires" %}{% assign t_acc_holder = "Titulaire du compte" %}
     {% assign t_bank = "Banque" %}{% assign t_pmt_instr = "Instructions de paiement :" %}{% assign t_pmt_memo = "Veuillez utiliser la Commande comme référence." %}
     {% assign t_footer = "Si vous avez des questions, veuillez envoyer un e-mail à" %}{% assign t_free_gift = "OFFERT (Valeur en douane)" %}
@@ -35,7 +35,7 @@
     {% assign t_pmt_details = "Zahlungsdetails" %}{% assign t_total_msrp = "Gesamtlistenpreis" %}
     {% assign t_disc_code = "Codes & Community" %}{% assign t_no_code = "Werde Teil der PRO-Community" %}
     {% assign t_tax_label = "MwSt" %}{% assign t_shop_vat = "MwSt" %}
-    {% assign t_amt_saved = "Gesamte Ersparnis" %}{% assign t_b2b_disc = "Standard B2B-Rabatt" %}{% assign t_overall_disc = "Effektiver Rabatt (inkl. Geschenke)" %}{% assign t_subtotal_net = "Zwischensumme Netto Produkte" %}{% assign t_shipping = "Versand" %}
+    {% assign t_amt_saved = "Gesamte Ersparnis" %}{% assign t_overall_disc = "Effektiver Rabatt (inkl. Geschenke)" %}{% assign t_subtotal_net = "Zwischensumme Netto Produkte" %}{% assign t_shipping = "Versand" %}
     {% assign t_total_order = "Gesamtbestellwert" %}{% assign t_outstanding = "NOCH ZU ZAHLEN" %}{% assign t_paid = "BEZAHLT" %}{% assign t_pmt_status = "Zahlungsstatus" %}{% assign t_bank_details = "Bankverbindung" %}{% assign t_acc_holder = "Kontoinhaber" %}
     {% assign t_bank = "Bank" %}{% assign t_pmt_instr = "Zahlungsanweisungen:" %}{% assign t_pmt_memo = "Bitte verwenden Sie die Bestellung als Referenz." %}
     {% assign t_footer = "Wenn Sie Fragen haben, senden Sie bitte eine E-Mail an" %}{% assign t_free_gift = "GRATIS (Zollwert)" %}
@@ -48,7 +48,7 @@
     {% assign t_pmt_details = "Payments Details" %}{% assign t_total_msrp = "Total List Price" %}
     {% assign t_disc_code = "Codes & Community" %}{% assign t_no_code = "Join our PRO Community" %}
     {% assign t_tax_label = "VAT" %}{% assign t_shop_vat = "VAT" %}
-    {% assign t_amt_saved = "Total Amount Saved" %}{% assign t_b2b_disc = "Standard B2B Discount" %}{% assign t_overall_disc = "Effective Discount (Inc. Gifts)" %}{% assign t_subtotal_net = "Subtotal Net Products" %}{% assign t_shipping = "Shipping" %}
+    {% assign t_amt_saved = "Total Amount Saved" %}{% assign t_overall_disc = "Effective Discount (Inc. Gifts)" %}{% assign t_subtotal_net = "Subtotal Net Products" %}{% assign t_shipping = "Shipping" %}
     {% assign t_total_order = "Total Order Value" %}{% assign t_outstanding = "OUTSTANDING AMOUNT" %}{% assign t_paid = "PAID" %}{% assign t_pmt_status = "Payment Status" %}{% assign t_bank_details = "Banking Details" %}{% assign t_acc_holder = "Account Holder" %}
     {% assign t_bank = "Bank" %}{% assign t_pmt_instr = "Payment Instructions:" %}{% assign t_pmt_memo = "Please use Order as reference." %}
     {% assign t_footer = "If you have any questions, please send an email to" %}{% assign t_free_gift = "FREE GIFT (Customs value)" %}
@@ -118,21 +118,21 @@
     <tr>
       <th style="width: 5%; text-align: left; padding: 5px 0; border-bottom: 1px solid #000;">{{ t_qty }}</th>
       <th style="width: 15%; text-align: left; padding: 5px 0; border-bottom: 1px solid #000;">Sku</th>
-      <th style="width: 30%; text-align: left; padding: 5px 0; border-bottom: 1px solid #000;">{{ t_item }}</th>
-      <th style="width: 12%; text-align: right; padding: 5px 0; border-bottom: 1px solid #000;">{{ t_list }}</th>
-      <th style="width: 12%; text-align: right; padding: 5px 0; border-bottom: 1px solid #000;">{{ t_disc_perc }}</th>
-      <th style="width: 13%; text-align: right; padding: 5px 0; border-bottom: 1px solid #000;">{{ t_unit_net }}</th>
+      <th style="width: 34%; text-align: left; padding: 5px 0; border-bottom: 1px solid #000;">{{ t_item }}</th>
+      <th style="width: 11%; text-align: right; padding: 5px 0; border-bottom: 1px solid #000;">{{ t_list }}</th>
+      <th style="width: 10%; text-align: right; padding: 5px 0; border-bottom: 1px solid #000;">{{ t_disc_perc }}</th>
+      <th style="width: 12%; text-align: right; padding: 5px 0; border-bottom: 1px solid #000;">{{ t_unit_net }}</th>
       <th style="width: 13%; text-align: right; padding: 5px 0; border-bottom: 1px solid #000;">{{ t_total_net }}</th>
     </tr>
   </thead>
   <tbody>
     {% assign total_msrp_all = 0 %}
-    {% assign total_msrp_paid_items = 0 %}
-    {% assign total_net_paid_items = 0 %}
 
     {% for line in order.line_items %}
       {% comment %} 
-        LOGICA PREZZI: order.b2b protegge le vecchie fatture D2C 
+        LOGICA PREZZI B2B vs D2C:
+        Se B2B: listino = catalogo B2B, retail_msrp = mostrato come info sotto il titolo
+        Se D2C: listino = compare_at_price (retail MSRP), non c'è sub-info
       {% endcomment %}
       {% if order.b2b %}
         {% assign item_list = line.original_price %}
@@ -149,8 +149,8 @@
       {% endfor %}
       {% assign unit_net = net_line_total | divided_by: line.quantity %}
 
-      {% comment %} Calcolo Sconto % basato sul listino corrente dell'ordine {% endcomment %}
-      {% if item_list > 0 %}
+      {% comment %} Calcolo Sconto % basato sul listino (B2B o D2C) della riga {% endcomment %}
+      {% if item_list > unit_net %}
         {% assign item_disc_perc = item_list | minus: unit_net | times: 100.0 | divided_by: item_list | round: 1 %}
       {% else %}
         {% assign item_disc_perc = 0 %}
@@ -159,26 +159,22 @@
       {% assign is_free_gift = false %}
       {% if unit_net == 0 or item_disc_perc >= 99.0 %}{% assign is_free_gift = true %}{% endif %}
 
-      {% comment %} Accumulatori per i totali a fondo pagina {% endcomment %}
+      {% comment %} Accumulatore del valore del listino esposto (usato per i totali in basso) {% endcomment %}
       {% assign line_list_sum = item_list | times: line.quantity %}
       {% assign total_msrp_all = total_msrp_all | plus: line_list_sum %}
-      {% if is_free_gift == false %}
-        {% assign total_msrp_paid_items = total_msrp_paid_items | plus: line_list_sum %}
-        {% assign total_net_paid_items = total_net_paid_items | plus: net_line_total %}
-      {% endif %}
 
       <tr>
         <td style="padding: 8px 0; border-bottom: 1px solid #eee; vertical-align: top;">{{ line.quantity }}</td>
         <td style="padding: 8px 0; border-bottom: 1px solid #eee; vertical-align: top;">{{ line.sku }}</td>
         <td style="padding: 8px 0; border-bottom: 1px solid #eee; vertical-align: top;">
           {{ line.title }}
-          {% if retail_msrp > 0 %}
+          {% if order.b2b and retail_msrp > 0 %}
             <br><span style="color: #666; font-size: 0.85em;">{{ t_msrp_ref }} {{ retail_msrp | money }}</span>
           {% endif %}
           {% if is_free_gift %}<br><span style="color:#e63946; font-size: 0.85em; font-weight: bold; text-transform: uppercase;">{{ t_free_gift }}</span>{% endif %}
         </td>
         <td style="text-align: right; padding: 8px 0; border-bottom: 1px solid #eee; vertical-align: top;">{{ item_list | money }}</td>
-        <td style="text-align: right; padding: 8px 0; border-bottom: 1px solid #eee; vertical-align: top;">{{ item_disc_perc }}%</td>
+        <td style="text-align: right; padding: 8px 0; border-bottom: 1px solid #eee; vertical-align: top;">{% if item_disc_perc > 0 %}{{ item_disc_perc }}%{% else %}-{% endif %}</td>
         <td style="text-align: right; padding: 8px 0; border-bottom: 1px solid #eee; vertical-align: top;">{{ unit_net | money }}</td>
         <td style="text-align: right; padding: 8px 0; border-bottom: 1px solid #eee; vertical-align: top;"><strong>{{ net_line_total | money }}</strong></td>
       </tr>
@@ -218,18 +214,7 @@
     {% endfor %}
     {% assign discount_codes_list = discount_codes_list | strip | strip_newlines | remove_last: "," %}
 
-    {% if total_msrp_paid_items > 0 %}
-      {% assign base_b2b_discount = total_msrp_paid_items | minus: total_net_paid_items | times: 100.0 | divided_by: total_msrp_paid_items | round: 1 %}
-    {% else %}
-      {% assign base_b2b_discount = 0 %}
-    {% endif %}
-
     {% assign total_savings_money = total_msrp_all | minus: order.subtotal_price %}
-    {% if total_msrp_all > 0 %}
-      {% assign effective_discount_perc = total_savings_money | times: 100.0 | divided_by: total_msrp_all | round: 1 %}
-    {% else %}
-      {% assign effective_discount_perc = 0 %}
-    {% endif %}
 
     <tr>
       <td colspan="5" style="text-align: right; padding: 5px 30px 5px 0;">{{ t_total_msrp }}</td>
@@ -243,22 +228,25 @@
       </td>
     </tr>
 
-    {% if base_b2b_discount > 0 and base_b2b_discount != effective_discount_perc %}
-    <tr>
-      <td colspan="5" style="text-align: right; padding: 5px 30px 5px 0;">{{ t_b2b_disc }}</td>
-      <td colspan="2" style="text-align: right; padding: 5px 0;">{{ base_b2b_discount }}%</td>
-    </tr>
-    {% endif %}
-
     {% if total_savings_money > 0 %}
-      <tr style="color: #e63946;">
-        <td colspan="5" style="text-align: right; padding: 5px 30px 5px 0;">{{ t_amt_saved }}</td>
-        <td colspan="2" style="text-align: right; padding: 5px 0;">-{{ total_savings_money | money }}</td>
-      </tr>
-      <tr style="background-color: #f9f9f9;">
-        <td colspan="5" style="text-align: right; padding: 5px 30px 5px 0;"><strong>{{ t_overall_disc }}</strong></td>
-        <td colspan="2" style="text-align: right; padding: 5px 0;"><strong>{{ effective_discount_perc }}%</strong></td>
-      </tr>
+      {% if order.b2b %}
+        {% comment %} B2B: Mostra lo sconto solo se c'è un risparmio extra rispetto al Listino B2B {% endcomment %}
+        <tr style="color: #e63946;">
+          <td colspan="5" style="text-align: right; padding: 5px 30px 5px 0;">Sconto Extra</td>
+          <td colspan="2" style="text-align: right; padding: 5px 0;">-{{ total_savings_money | money }}</td>
+        </tr>
+      {% else %}
+        {% comment %} D2C: Mostra il grande Risparmio Totale e la Percentuale Effettiva {% endcomment %}
+        {% assign effective_discount_perc = total_savings_money | times: 100.0 | divided_by: total_msrp_all | round: 1 %}
+        <tr style="color: #e63946;">
+          <td colspan="5" style="text-align: right; padding: 5px 30px 5px 0;">{{ t_amt_saved }}</td>
+          <td colspan="2" style="text-align: right; padding: 5px 0;">-{{ total_savings_money | money }}</td>
+        </tr>
+        <tr style="background-color: #f9f9f9;">
+          <td colspan="5" style="text-align: right; padding: 5px 30px 5px 0;"><strong>{{ t_overall_disc }}</strong></td>
+          <td colspan="2" style="text-align: right; padding: 5px 0;"><strong>{{ effective_discount_perc }}%</strong></td>
+        </tr>
+      {% endif %}
     {% endif %}
 
     <tr>
